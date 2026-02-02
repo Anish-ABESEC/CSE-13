@@ -3,32 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scrollable Image Grid</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 250px);
+            gap: 20px;
+            height: 200px;
+            overflow-y: auto;
+        }
+
+        .card {
+            border: 2px solid gray;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
 </head>
-<body><div style="display: grid;grid-template-columns: repeat(3, 250px); gap: 20px; overflow-y: auto; height: 200px;">
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/10351.jpg" width="100%" height="100px">
-        <p>Image 1</p>
+
+<body>
+
+    <h2>Scrollable Image Gallery</h2>
+
+    <div class="grid-container">
+        <div class="card">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/10351.jpg" alt="Image 1">
+            <p>Image 1</p>
+        </div>
+
+        <div class="card">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/16999.jpg" alt="Image 2">
+            <p>Image 2</p>
+        </div>
+
+        <div class="card">
+            <img src="https://4kwallpapers.com/images/walls/thumbs_2t/9191.jpg" alt="Image 3">
+            <p>Image 3</p>
+        </div>
+
+        <div class="card">
+            <img src="https://wallpaperaccess.com/full/1588.jpg" alt="Image 4">
+            <p>Image 4</p>
+        </div>
+
+        <div class="card">
+            <img src="https://wallpaperaccess.com/full/406904.jpg" alt="Image 5">
+            <p>Image 5</p>
+        </div>
+
+        <div class="card">
+            <img src="https://wallpaperaccess.com/full/406891.jpg" alt="Image 6">
+            <p>Image 6</p>
+        </div>
     </div>
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/16999.jpg" width="100%" height="100px">
-        <p>Image 2</p>
-    </div>
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/9191.jpg" width="100%" height="100px">
-        <p>Image 3</p>
-    </div>
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/8249.jpg" width="100%" height="100px">
-        <p>Image 4</p>
-    </div>
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/7115.jpg" width="100%" height="100px">
-        <p>Image 5</p>
-    </div>
-    <div style="border: 2px solid gray; text-align: center;">
-        <img src="https://4kwallpapers.com/images/walls/thumbs_2t/14974.jpg" width="100%" height="100px">
-        <p>Image 6</p>
-    </div></div>
+
 </body>
 </html>

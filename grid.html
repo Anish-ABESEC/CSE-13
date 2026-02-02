@@ -1,18 +1,36 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CSS Grid Example</title>
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 2fr 1fr;
+            height: 300px;
+            gap: 5px;
+        }
+
+        .grid-container div {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
-<body><div style="display:grid; grid-template-columns:repeat( 3,1fr);height: 100px; 1fr 2fr 1fr;">
-    <div style="background-color:aqua;">BOX1</div>
-<div style="background-color:yellow;">BOX2</div>
-<div style="background-color:red;">BOX3</div>
-<div style="background-color:blue;">BOX4</div>
-<div style="background-color:pink;">BOX5</div>
-</div>
- 
-    
+<body>
+
+    <div class="grid-container">
+        <div style="background-color:aqua;">BOX1</div>
+        <div style="background-color:yellow; color:black;">BOX2</div>
+        <div style="background-color:red;">BOX3</div>
+        <div style="background-color:blue;">BOX4</div>
+        <div style="background-color:pink; color:black;">BOX5</div>
+    </div>
+
 </body>
 </html>
