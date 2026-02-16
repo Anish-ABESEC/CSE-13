@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopZone - Online Shopping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #131921;
+            color: white;
+            padding: 15px 30px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff9900;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #febd69;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .cart {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #232f3e;
+            padding: 10px 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ff9900;
+        }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(to bottom, #37475a, #2c3e50);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        /* Products Section */
+        .products-section {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 48px;
+        }
+
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #007185;
+            min-height: 40px;
+        }
+
+        .product-rating {
+            color: #ffa41c;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #b12704;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 10px;
+            background-color: #ffd814;
+            border: 1px solid #fcd200;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #f7ca00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #232f3e;
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="logo">ShopZone</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products...">
+                <button>🔍</button>
+            </div>
+            <div class="cart">
+                <span class="cart-icon">🛒</span>
+                <span>Cart (0)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">Today's Deals</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Home & Kitchen</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="#">Sports</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h2>Welcome to ShopZone</h2>
+        <p>Find amazing deals on everything you need!</p>
+    </div>
+
+    <!-- Products Section -->
+    <div class="products-section">
+        <h3 class="section-title">Featured Products</h3>
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <div class="product-title">Smartphone XR Pro - Latest Model with Advanced Features</div>
+                <div class="product-rating">⭐⭐⭐⭐⭐ (1,234)</div>
+                <div class="product-price">$799.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">💻</div>
+                <div class="product-title">Laptop Ultra Slim - 15.6" Display, 16GB RAM</div>
+                <div class="product-rating">⭐⭐⭐⭐ (892)</div>
+                <div class="product-price">$1,299.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">🎧</div>
+                <div class="product-title">Wireless Headphones - Noise Cancelling, 30hr Battery</div>
+                <div class="product-rating">⭐⭐⭐⭐⭐ (2,567)</div>
+                <div class="product-price">$199.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">⌚</div>
+                <div class="product-title">Smart Watch Series 7 - Fitness Tracker & Health Monitor</div>
+                <div class="product-rating">⭐⭐⭐⭐ (1,456)</div>
+                <div class="product-price">$349.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">📷</div>
+                <div class="product-title">Digital Camera 4K - Professional Photography Equipment</div>
+                <div class="product-rating">⭐⭐⭐⭐⭐ (678)</div>
+                <div class="product-price">$899.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">🎮</div>
+                <div class="product-title">Gaming Console - Next Gen with 1TB Storage</div>
+                <div class="product-rating">⭐⭐⭐⭐⭐ (3,421)</div>
+                <div class="product-price">$499.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">📚</div>
+                <div class="product-title">E-Reader Tablet - Thousands of Books in One Device</div>
+                <div class="product-rating">⭐⭐⭐⭐ (1,987)</div>
+                <div class="product-price">$129.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">🏃</div>
+                <div class="product-title">Running Shoes - Premium Comfort & Performance</div>
+                <div class="product-rating">⭐⭐⭐⭐⭐ (4,123)</div>
+                <div class="product-price">$89.99</div>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+            <a href="#">Help</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+        <p>&copy; 2024 ShopZone. All rights reserved.</p>
+    </footer>
+</body>
+</html>
